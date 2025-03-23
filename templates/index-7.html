@@ -1,0 +1,605 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+	<!-- Content -->
+    <div class="page-content bg-white">	
+		<!-- Slider -->
+        <div class="main-slider style-two default-banner" id="home">
+            <div class="tp-banner-container">
+                <div class="tp-banner" >
+					<div id="rev_slider_1164_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="exploration-header" data-source="gallery" style="background-color:transparent;padding:0px;">
+						<!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+						<div id="rev_slider_1164_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+							<ul>
+								{% for i in banners %}
+								<!-- SLIDE  -->
+								<li data-index="rs-100" data-transition="slideoververtical" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+								<!-- MAIN IMAGE -->
+								<img src="{{ i.image.url }}"  alt=""  data-lazyload="{{ i.image.url }}" data-bgposition="center center" data-kenburns="on" data-duration="4000" data-ease="Power3.easeInOut" data-scalestart="150" data-scaleend="100" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="4" class="rev-slidebg" data-no-retina>
+								<!-- LAYER NR. 1 -->
+								<!-- LAYERS -->
+								<div class="tp-caption tp-shape tp-shapewrapper " id="slide-100-layer"
+									data-x="['center','center','center','center']"
+									data-hoffset="['0','0','0','0']"
+									data-y="['middle','middle','middle','middle']"
+									data-voffset="['0','0','0','0']"
+									data-width="full" data-height="full"
+									data-whitespace="nowrap"
+									data-type="shape"
+									data-basealign="slide"
+									data-responsive_offset="off"
+									data-responsive="off"
+									data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]'
+									data-textAlign="['left','left','left','left']"
+									data-paddingtop="[0,0,0,0]"
+									data-paddingright="[0,0,0,0]"
+									data-paddingbottom="[0,0,0,0]"
+									data-paddingleft="[0,0,0,0]"
+									style="z-index: 2;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px; background-image:url({% static 'images/overlay/rrdiagonal-line.png)"> </div>
+									<!-- LAYER NR. 1 -->
+								<!-- BACKGROUND VIDEO LAYER -->
+
+
+								<div class="tp-caption "
+									id="slide-100-layer-3"
+									data-x="['center','center','center','center']" data-hoffset="['-90','-150','0','0']"
+									data-y="['middle','middle','middle','middle']" data-voffset="['-90','-100','-80','-90']"
+									data-fontsize="['65','50','40','30']"
+									data-lineheight="['75','60','50','40']"
+									data-letterspacing="['2','2','2','2']"
+									data-width="['1000','none','768','360']"
+									data-height="none"
+									data-whitespace="['normal','nowrap','normal','normal']"
+									data-type="text"
+									data-responsive_offset="off"
+									data-responsive="off"
+									data-frames='[{"delay":900,"speed":2000,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:1.1;sY:1.1;skX:0;skY:0;opacity:0;","color":"#000000","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","color":"#000000","to":"opacity:0;","ease":"nothing"}]'
+									data-textAlign="['left','left','center','center']"
+									data-paddingtop="[0,0,0,0]"
+									data-paddingright="[10,10,0,0]"
+									data-paddingbottom="[0,0,0,0]"
+									data-paddingleft="[0,0,0,0]"
+									style="z-index: 6; min-width: 800px; max-width: 800px; font-weight: 600; white-space: normal; color: #fff; font-family: 'Poppins',sans-serif;">
+									{{ i.title|safe }}
+								</div>
+								<!-- LAYER NR. 3 -->
+								<div class="tp-caption"
+									id="slide-100-layer-4"
+									data-x="['center','center','center','center']" data-hoffset="['-265','-165','0','0']"
+									data-y="['middle','middle','middle','middle']" data-voffset="['50','15','20','10']"
+									data-fontsize="['18','16','14','14']"
+									data-lineheight="['30','30','26','26']"
+									data-width="['640','481','500','300']"
+									data-height="none"
+									data-whitespace="normal"
+									data-type="text"
+									data-responsive_offset="off"
+									data-responsive="off"
+									data-frames='[{"delay":900,"speed":2000,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:1.1;sY:1.1;skX:0;skY:0;opacity:0;","color":"#000000","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","color":"#000000","to":"opacity:0;","ease":"nothing"}]'
+									data-textAlign="['left','left','center','center']"
+									data-paddingtop="[0,0,0,0]"
+									data-paddingright="[0,0,0,0]"
+									data-paddingbottom="[0,0,0,0]"
+									data-paddingleft="[0,0,0,0]"
+									style="z-index: 7; min-width: 640px; max-width: 640px; font-weight: 700; font-size: 18px; line-height: 30px; font-weight: 400; color: #fff; font-family: 'Poppins',sans-serif;">
+									{{ i.description }}
+								</div>
+								<!-- LAYER NR. 5 -->
+								<a class="tp-caption rev-btn tc-btnshadow tp-rs-menulink bg-primary"
+									href="{% url 'about' %}" target="_blank"
+									id="slide-100-layer-5"
+									data-x="['center','center','center','center']" data-hoffset="['-515','-340','-85','-65']"
+									data-y="['middle','middle','middle','middle']" data-voffset="['140','100','100','100']"
+									data-lineheight="['18','18','18','18']"
+									data-whitespace="nowrap"
+									data-type="button"
+									data-actions=''
+									data-responsive_offset="off"
+									data-responsive="off"
+									data-frames='[{"delay":900,"speed":2000,"frame":"0","from":"x:-50px;z:0;rX:0;rY:0;rZ:0;sX:1.1;sY:1.1;skX:0;skY:0;opacity:0;fbr:100;","bgcolor":"#000000","to":"o:1;fbr:100;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","bgcolor":"#000000","to":"opacity:0;fbr:100;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"150","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;fbr:90%;","style":"c:rgba(255,255,255,1);"}]'
+									data-textAlign="['center','center','center','center']"
+									data-paddingtop="[15,15,15,10]"
+									data-paddingright="[30,30,30,20]"
+									data-paddingbottom="[15,15,15,10]"
+									data-paddingleft="[30,30,30,20]"
+									style="z-index: 8;letter-spacing: 2px; white-space: nowrap; font-size: 12px; font-weight: 600; color: rgba(255,255,255,1);  text-transform: uppercase;"> {% trans 'О нас' %}
+								</a>
+								<!-- LAYER NR. 5 -->
+								<a class="tp-caption rev-btn tc-btnshadow tp-rs-menulink bg-primary"
+									href="{% url 'services' %}" target="_blank"
+									id="slide-100-layer-6"
+									data-x="['center','center','center','center']" data-hoffset="['-360','-180','70','65']"
+									data-y="['middle','middle','middle','middle']" data-voffset="['140','100','100','100']"
+									data-lineheight="['18','18','18','18']"
+									data-whitespace="nowrap"
+									data-type="button"
+									data-actions=''
+									data-responsive_offset="off"
+									data-responsive="off"
+									data-frames='[{"delay":900,"speed":2000,"frame":"0","from":"x:-50px;z:0;rX:0;rY:0;rZ:0;sX:1.1;sY:1.1;skX:0;skY:0;opacity:0;fbr:100;","bgcolor":"#000000","to":"o:1;fbr:100;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","bgcolor":"#000000","to":"opacity:0;fbr:100;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"150","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;fbr:90%;","style":"c:rgba(255,255,255,1);"}]'
+									data-textAlign="['center','center','center','center']"
+									data-paddingtop="[15,15,15,10]"
+									data-paddingright="[30,30,30,20]"
+									data-paddingbottom="[15,15,15,10]"
+									data-paddingleft="[30,30,30,20]"
+									style="z-index: 8;letter-spacing: 2px; white-space: nowrap; font-size: 12px; font-weight: 600; color: rgba(255,255,255,1);  text-transform: uppercase;">{% trans 'Наши услуги' %}
+								</a>
+							</li>
+								{% endfor %}
+							</ul>
+							<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	
+						</div>
+					</div><!-- END REVOLUTION SLIDER -->  
+				</div>        
+			</div>        
+		</div>        
+		<!-- Slider END -->
+        <!-- contact area -->
+        <div class="content-block">
+			<!-- Call To Action End -->
+			<div class="section-full call-action bg-primary">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-9 text-white">
+							<h2 class="title">Моторные масла, автокосметика и автохимия SUPER-Q </h2>
+							<p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						</div>
+						<div class="col-lg-3 d-flex">
+							<a href="{% url 'contact' %}" class="site-button btnhover10 white align-self-center outline ms-auto radius-xl outline-2">Свяжитесь с нам </a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Call To Action End -->
+			<!-- About Me -->
+			<div class="section-full content-inner exhibition-bx">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="exhibition-carousel owl-carousel owl-none m-b30">
+								<div class="item"><img src="images/gallery/food/pic1.jpg" alt=""></div>
+								<div class="item"><img src="images/gallery/food/pic2.jpg" alt=""></div>
+								<div class="item"><img src="images/gallery/food/pic3.jpg" alt=""></div>
+								<div class="item"><img src="images/gallery/food/pic4.jpg" alt=""></div>
+							</div>
+						</div>
+						<div class="col-lg-6 m-b30 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="content-bx1">
+								<div class="section-head">
+									<h2 class="title">Quality Products <br>With Sweet eggs a breads </h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie nec nisl eget scelerisque. Quisque placerat suscipit eros, eu tincidunt tellus blandit vel. Donec pellentesque dapibus interdum. Mauris et tellus congue, rutrum neque a, varius felis.</p>
+								</div>
+								<a href="contact-2.html" class="site-button btnhover10 black m-r10 m-b10">Contact us</a>
+								<a href="portfolio-details.html" class="site-button btnhover10 black m-b10">View portfolio</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Our Project and Gallery -->
+			<div class="section-full">
+				<div class="row m-lr0">
+					<div class="col-xl-6 col-lg-12 p-lr0 wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+						<div class="row m-a0 lightgallery img-hi" id="lightgallery">
+							<div class="col-lg-12 col-md-12 col-sm-12 p-lr0">
+								<div class="dlab-box overlay-gallery-bx1">
+									<div class="dlab-thum dlab-img-overlay1 primary dlab-img-effect zoom"> 
+										<a href="javascript:void(0);"> <img class="img-cover" src="images/gallery/food/pic7.jpg"  alt=""> </a>
+										<div class="overlay-bx">
+											<div class="overlay-icon"> 
+												<a href="javascript:void(0);"> <i class="fas fa-play icon-bx-xs"></i> </a> 
+												<span data-exthumbimage="images/gallery/food/pic7.jpg" data-src="images/gallery/food/pic7.jpg" class="check-km" title="Cookies">		
+													<i class="fas fa-search icon-bx-xs"></i> 
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 p-lr0">
+								<div class="dlab-box overlay-gallery-bx1">
+									<div class="dlab-thum dlab-img-overlay1 primary dlab-img-effect zoom"> 
+										<a href="javascript:void(0);"> <img class="img-cover" src="images/gallery/food/pic5.jpg"  alt=""> </a>
+										<div class="overlay-bx">
+											<div class="overlay-icon"> 
+												<a href="javascript:void(0);"> <i class="fas fa-play icon-bx-xs"></i> </a> 
+												<span data-exthumbimage="images/gallery/food/pic5.jpg" data-src="images/gallery/food/pic5.jpg" class="check-km" title="Burger">		
+													<i class="fas fa-search icon-bx-xs"></i> 
+												</span>												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 p-lr0">
+								<div class="dlab-box overlay-gallery-bx1">
+									<div class="dlab-thum dlab-img-overlay1 primary dlab-img-effect zoom"> 
+										<a href="javascript:void(0);"> <img class="img-cover" src="images/gallery/food/pic6.jpg"  alt=""> </a>
+										<div class="overlay-bx">
+											<div class="overlay-icon"> 
+												<a href="javascript:void(0);"> <i class="fas fa-play icon-bx-xs"></i> </a>
+												<span data-exthumbimage="images/gallery/food/pic6.jpg" data-src="images/gallery/food/pic6.jpg" class="check-km" title="Bear cup">		
+													<i class="fas fa-search icon-bx-xs"></i> 
+												</span>	
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-6 col-lg-12 p-lr0 d-flex dis-tbl latest-project-info bg-primary wow bounceInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+						<div class="text-white align-self-center ">
+							<h2>Our Latest Item Food Industry</h2>
+							<p>Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper <span class="text-white">metus in erat viverra</span>, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada vel. Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper <span class="text-white">metus in erat viverra</span>, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada vel.</p>
+							<a href="portfolio-details.html" class="site-button btnhover10 white">View Project</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Our Project and Gallery End -->
+			<!-- Latest Project -->
+			<div class="section-full bg-white content-inner-2">
+                <div class="container">
+                    <div class="section-head text-center">
+						<h2 class="title">Our Gallery</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<div class="site-filters m-b20">
+								<ul class="filters" data-bs-toggle="buttons">
+									<li data-filter="" class="btn active"><input type="radio"><a href="#" class="site-button btnhover10 outline outline-2 button-sm"><span>All</span></a></li>
+									<li data-filter="healty" class="btn"><input type="radio"><a href="#" class="site-button btnhover10 outline outline-2 button-sm"><span>Healty Food</span></a></li>
+									<li data-filter="food" class="btn"><input type="radio"><a href="#" class="site-button btnhover10 outline outline-2 button-sm"><span>Food</span></a></li>
+									<li data-filter="organic" class="btn"><input type="radio"><a href="#" class="site-button btnhover10 outline outline-2 button-sm"><span>Organic</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row sp15">
+						<div class="col-lg-12">
+							<ul id="masonry" class="dlab-gallery-listing gallery mfp-gallery text-center">
+								<li class="card-container col-lg-3 col-md-6 col-sm-6 healty food m-b15 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">
+										<img src="images/gallery/food/pic1.jpg" alt="">
+										<div class="overlay-bx">
+											<div class="portinner">
+												<h3 class="port-title"><a href="portfolio-details.html">Cookies</a></h3>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="card-container col-lg-3 col-md-6 col-sm-6 food organic m-b15 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
+									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">
+										<img src="images/gallery/food/pic2.jpg" alt="">
+										<div class="overlay-bx">
+											<div class="portinner">
+												<h3 class="port-title"><a href="portfolio-details.html">Ice cream</a></h3>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="card-container col-lg-3 col-md-6 col-sm-6 healty m-b15 wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.3s">
+									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">
+										<img src="images/gallery/food/pic3.jpg" alt="">
+										<div class="overlay-bx">
+											<div class="portinner">
+												<h3 class="port-title"><a href="portfolio-details.html">Bear cup</a></h3>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="card-container col-lg-3 col-md-6 col-sm-6 healty food m-b15 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">
+										<img src="images/gallery/food/pic4.jpg" alt="">
+										<div class="overlay-bx">
+											<div class="portinner">
+												<h3 class="port-title"><a href="portfolio-details.html">Burger</a></h3>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Latest Project End -->
+			<!-- About Me End -->
+			<div class="section-full bg-primary content-inner">
+                <div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="icon-bx-wraper sr-iconbox1">
+								<div class="icon-lg m-b20 icon-up">
+									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon1.png" alt=""></a>
+								</div>
+								<div class="icon-content">
+									<h4 class="dlab-tilte">Cookies</h4>
+									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInUp" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="icon-bx-wraper sr-iconbox1">
+								<div class="icon-lg m-b20 icon-up">
+									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon2.png" alt=""></a>
+								</div>
+								<div class="icon-content">
+									<h4 class="dlab-tilte">Pizza</h4>
+									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="icon-bx-wraper sr-iconbox1">
+								<div class="icon-lg m-b20 icon-up">
+									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon3.png" alt=""></a>
+								</div>
+								<div class="icon-content">
+									<h4 class="dlab-tilte">Ice cream</h4>
+									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="icon-bx-wraper sr-iconbox1">
+								<div class="icon-lg m-b20 icon-up">
+									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon4.png" alt=""></a>
+								</div>
+								<div class="icon-content">
+									<h4 class="dlab-tilte">Bear cup</h4>
+									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInDown" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="icon-bx-wraper sr-iconbox1">
+								<div class="icon-lg m-b20 icon-up">
+									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon5.png" alt=""></a>
+								</div>
+								<div class="icon-content">
+									<h4 class="dlab-tilte">Chikan</h4>
+									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="icon-bx-wraper sr-iconbox1">
+								<div class="icon-lg m-b20 icon-up">
+									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon6.png" alt=""></a>
+								</div>
+								<div class="icon-content">
+									<h4 class="dlab-tilte">Burger</h4>
+									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<!-- Services -->
+			<!-- Our Team -->
+			<div class="section-full bg-white content-inner">
+                <div class="container">
+                    <div class="section-head text-center">
+						<h2 class="title">Our Team</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+					</div>
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s"> 
+							<div class="dlab-box m-b30 dlab-team4">
+								<div class="dlab-media">
+									<a href="team-1.html">
+										<img alt="" src="images/our-team/team-bx/pic1.jpg">
+									</a>
+								</div>
+								<div class="dlab-info">
+									<h4 class="dlab-title"><a href="team-1.html">Nashid Martines</a></h4>
+									<span class="dlab-position">Director</span>
+									<ul class="dlab-social-icon">
+										<li><a class="site-button circle-sm gray-light fab fa-facebook-f" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-twitter" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-linkedin-in" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-pinterest-p" href="javascript:void(0);"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="dlab-box m-b30 dlab-team4">
+								<div class="dlab-media">
+									<a href="team-1.html">
+										<img alt="" src="images/our-team/team-bx/pic2.jpg">
+									</a>
+								</div>
+								<div class="dlab-info">
+									<h4 class="dlab-title"><a href="team-1.html">Konne Backfield</a></h4>
+									<span class="dlab-position">Designer</span>
+									<ul class="dlab-social-icon">
+										<li><a class="site-button circle-sm gray-light fab fa-facebook-f" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-twitter" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-linkedin-in" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-pinterest-p" href="javascript:void(0);"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="dlab-box m-b30 dlab-team4">
+								<div class="dlab-media">
+									<a href="team-1.html">
+										<img alt="" src="images/our-team/team-bx/pic3.jpg">
+									</a>
+								</div>
+								<div class="dlab-info">
+									<h4 class="dlab-title"><a href="team-1.html">Hackson Willingham</a></h4>
+									<span class="dlab-position">Developer</span>
+									<ul class="dlab-social-icon">
+										<li><a class="site-button circle-sm gray-light fab fa-facebook-f" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-twitter" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-linkedin-in" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-pinterest-p" href="javascript:void(0);"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="dlab-box m-b30 dlab-team4">
+								<div class="dlab-media">
+									<a href="team-1.html">
+										<img alt="" src="images/our-team/team-bx/pic4.jpg">
+									</a>
+								</div>
+								<div class="dlab-info">
+									<h4 class="dlab-title"><a href="team-1.html">Konne Backfield</a></h4>
+									<span class="dlab-position">Manager</span>
+									<ul class="dlab-social-icon">
+										<li><a class="site-button circle-sm gray-light fab fa-facebook-f" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-twitter" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-linkedin-in" href="javascript:void(0);"></a></li>
+										<li><a class="site-button circle-sm gray-light fab fa-pinterest-p" href="javascript:void(0);"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Our Team End -->
+			<!-- Testimonials -->
+			<div class="section-full content-inner-2 bg-primary wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s"> 
+				<div class="container">
+					<div class="section-head style2 text-center text-white">
+						<h2 class="title">Testimonials</h2>
+						<p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+					</div>
+					<div class="section-content">
+						<div class="testimonial-one-dots owl-carousel owl-btn-center-lr owl-btn-3 owl-theme owl-btn-white testimonial-11-area  owl-dots-white-full">
+							<div class="item">
+								<div class="testimonial-11 text-white">
+									<div class="testimonial-pic">
+										<img src="images/our-team/pic1.jpg" alt="">
+									</div>
+									<div class="testimonial-detail clearfix">
+										<div class="testimonial-text">
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an printer took a galley of type and scrambled it to make [...]</p>
+										</div>
+										<h5 class="testimonial-name m-t0 m-b5">David Matin</h5> <span class="testimonial-position">Student</span> 
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimonial-11 text-white">
+									<div class="testimonial-pic">
+										<img src="images/our-team/pic2.jpg" alt="">
+									</div>
+									<div class="testimonial-detail clearfix">
+										<div class="testimonial-text">
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an printer took a galley of type and scrambled it to make [...]</p>
+										</div>
+										<h5 class="testimonial-name m-t0 m-b5">David Matin</h5> <span class="testimonial-position">Student</span> 
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimonial-11 text-white">
+									<div class="testimonial-pic">
+										<img src="images/our-team/pic3.jpg" alt="">
+									</div>
+									<div class="testimonial-detail clearfix">
+										<div class="testimonial-text">
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an printer took a galley of type and scrambled it to make [...]</p>
+										</div>
+										<h5 class="testimonial-name m-t0 m-b5">David Matin</h5> <span class="testimonial-position">Student</span> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Testimonials End -->
+			<!-- Latest blog -->
+			<div class="section-full content-inner bg-gray">
+				<div class="container">
+					<div class="section-head style2 text-center">
+						<h2 class="title">Latest blog post</h2>
+						<p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+					</div>
+					<div class="blog-carousel owl-none owl-carousel">
+						<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="blog-post post-style-2">
+								<div class="dlab-post-media dlab-img-effect zoom">
+									<a href="blog-single.html"><img src="images/blog/latest-blog/pic1.jpg" alt=""></a>
+								</div>
+								<div class="dlab-post-info">
+									<div class="dlab-post-meta">
+										<ul>
+											<li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li>
+											<li class="post-author"> By <a href="blog-single.html">demongo</a> </li>
+										</ul>
+									</div>
+									<div class="dlab-post-title">
+										<h4 class="post-title"><a href="blog-single.html">Why You Should Not Go To Industry</a></h4>
+									</div>
+									<div class="dlab-post-readmore">
+										<a href="blog-single.html" title="READ MORE" rel="bookmark" class="site-button btnhover10">READ MORE</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
+							<div class="blog-post post-style-2">
+								<div class="dlab-post-media dlab-img-effect zoom">
+									<a href="blog-single.html"><img src="images/blog/latest-blog/pic2.jpg" alt=""></a>
+								</div>
+								<div class="dlab-post-info">
+									<div class="dlab-post-meta">
+										<ul>
+											<li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li>
+											<li class="post-author"> By <a href="blog-single.html">AARON</a> </li>
+										</ul>
+									</div>
+									<div class="dlab-post-title ">
+										<h4 class="post-title"><a href="blog-single.html">Seven Doubts You Should Clarify About</a></h4>
+									</div>
+									<div class="dlab-post-readmore">
+										<a href="blog-single.html" title="READ MORE" rel="bookmark" class="site-button btnhover10">READ MORE</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s">
+							<div class="blog-post post-style-2">
+								<div class="dlab-post-media dlab-img-effect zoom"> 
+									<a href="blog-single.html"><img src="images/blog/latest-blog/pic3.jpg" alt=""></a>
+								</div>
+								<div class="dlab-post-info">
+									<div class="dlab-post-meta">
+										<ul>
+											<li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li>
+											<li class="post-author"> By <a href="blog-single.html">VICTORIA</a> </li>
+										</ul>
+									</div>
+									<div class="dlab-post-title">
+										<h4 class="post-title"><a href="blog-single.html">Seven Outrageous Ideas Industry</a></h4>
+									</div>
+									<div class="dlab-post-readmore">
+										<a href="blog-single.html" title="READ MORE" rel="bookmark" class="site-button btnhover10">READ MORE</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Latest blog END -->
+		</div>
+		<!-- contact area END -->
+    </div>
+    <!-- Content END -->
+{% endblock %}

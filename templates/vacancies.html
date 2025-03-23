@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+ОСОО КТЗ
+{% endblock %}
+{% block content %}
+    <!-- header END -->
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(images/banner/bnr1.jpg);">
+            <div class="container">
+                <div class="dlab-bnr-inr-entry">
+                    <h1 class="text-white">{% trans 'Вакансии' %}</h1>
+					<!-- Breadcrumb row -->
+					<div class="breadcrumb-row">
+						<ul class="list-inline">
+							<li><a href="index.html">{% trans 'Домой' %}</a></li>
+							<li>{% trans 'Вакансии' %}</li>
+						</ul>
+					</div>
+					<!-- Breadcrumb row END -->
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <div class="content-area">
+            <div class="container">
+				<div class="site-filters clearfix center  m-b40">
+						<ul class="filters" data-bs-toggle="buttons">
+							<li data-filter="" class="btn active">
+								<input type="radio">
+								<a href="{% url 'vacancies' %}" class="site-button-secondry button-sm radius-xl"><span>{% trans 'Все' %}</span></a>
+							</li>
+							{% for i in category_vac %}
+							<li data-filter="web" class="btn">
+								<input type="radio">
+								<a href="{% url 'vacancies' %}?category={{ i.pk }}" class="site-button-secondry button-sm radius-xl"><span>{{ i.title }}</span></a>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				<!-- blog grid -->
+				<div id="masonry" class="dlab-blog-grid-3 row">
+					{% for i in vacancies %}
+					<div class="post card-container col-xl-3 col-lg-4 col-md-6 col-sm-6">
+						<div class="blog-post blog-grid blog-rounded blog-effect1">
+
+							<div class="dlab-info p-a20 border-1">
+								<div class="dlab-post-meta">
+									<ul>
+										<li class="post-date"> {{ i.created_at }} </li>
+									</ul>
+								</div>
+								<div class="dlab-post-title ">
+									<h5 class="post-title"><a href="blog-single.html">{{ i.title }}</a></h5>
+								</div>
+								<div class="dlab-post-text">
+									<p>{{ i.mini_description }}</p>
+								</div>
+								<div class="dlab-post-readmore"> 
+									<a href="{% url 'vacancy_detail' i.pk %}" rel="bookmark" class="site-button">{% trans 'Подробнее' %}
+										<i class="ti-arrow-right"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<!-- blog grid END -->
+				<!-- Pagination -->
+				<div class="pagination-bx clearfix col-md-12 text-center">
+					<ul class="pagination">
+						{% if page_obj.has_previous %}
+							<li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> {% trans 'Предыдущий' %}</a></li>
+						{% else %}
+							<li class="previous disabled"><a href="javascript:void(0);"><i class="ti-arrow-left"></i> {% trans 'Предыдущий' %}</a></li>
+						{% endif %}
+
+						{% for i in page_obj.paginator.page_range %}
+							{% if page_obj.number == i %}
+								<li class="active"><a href="javascript:void(0);">{{ i }}</a></li>
+							{% else %}
+								<li><a href="?page={{ i }}">{{ i }}</a></li>
+							{% endif %}
+						{% endfor %}
+
+						{% if page_obj.has_next %}
+							<li class="next"><a href="?page={{ page_obj.next_page_number }}">{% trans 'Следующий' %}<i class="ti-arrow-right"></i></a></li>
+						{% else %}
+							<li class="next disabled"><a href="javascript:void(0);">{% trans 'Следующий' %} <i class="ti-arrow-right"></i></a></li>
+						{% endif %}
+					</ul>
+				</div>
+
+				<!-- Pagination END -->
+            </div>
+        </div>
+    </div>
+    <!-- Left & right section END -->
+    <!-- Content END-->
+	{% endblock %}

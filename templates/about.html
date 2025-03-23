@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load custom_filters %}
+{% block title %}
+
+ОСОО КТЗ
+{% endblock %}
+{% block content %}
+    <!-- Content -->
+    <div class="page-content bg-white">
+		<!-- inner page banner -->
+        <div class="dlab-bnr-inr overlay-black-middle text-center bg-pt" style="background-image:url(images/banner/bnr3.jpg);">
+            <div class="container">
+                <div class="dlab-bnr-inr-entry align-m text-center">
+                    <h1 class="text-white">{% trans 'О нас' %}</h1>
+					<!-- Breadcrumb row -->
+					<div class="breadcrumb-row">
+						<ul class="list-inline">
+							<li><a href="index.html">{% trans 'Домой' %}</a></li>
+							<li>{% trans 'О нас' %}</li>
+						</ul>
+					</div>
+					<!-- Breadcrumb row END -->
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- contact area -->
+        <div class="content-block">
+			<!-- About Services info -->
+			<div class="section-full content-inner bg-white video-section" style="background-image:url('images/background/bg-video.png');">
+				<div class="container">
+					<div class="section-content">
+						<div class="row d-flex">
+							<div class="col-lg-6 col-md-12 m-b30">
+								<div class="video-play-icon">
+										<iframe width="560" height="315" src="{{ site.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+									</div>
+							</div>
+							<div class="col-lg-6 col-md-12 m-b30 align-self-center video-infobx">
+								<div class="content-bx1">
+									<h2 class="m-b15 title">{{ site.title }}</h2>
+									{{ site.description|safe }}
+									<img src="images/sign.png" width="200" alt=""/>
+									<h4 class="m-b0">{{ site.director }}</h4>
+									<span class="font-14">{% trans 'Генеральный директор компании' %}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section-full content-inner bg-white">
+						<div class="container">
+
+							<div class="row" id="lightgallery">
+								{% for i in images %}
+								<div class="col-lg-4 col-md-6 col-sm-12 m-b50 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
+									<div class="dlab-box dlab-gallery-box">
+										<div class="dlab-media dlab-img-overlay1 dlab-img-effect">
+											<img src="{{ i.image.url }}" alt="">
+											<div class="overlay-bx">
+												<div class="overlay-icon">
+													<div class="text-white">
+														<span data-exthumbimage="{{ i.image.url }}" data-src="{{ i.image.url }}" class="check-km" title="Factory Managment">
+															<i class="far fa-image icon-bx-xs"></i>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="dez-info p-a30 bg-white">
+											<p class="dez-title m-t0">{{ i.title }}</p>
+
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+<!--					<div class="section-full content-inner-2 portfolio text-uppercase bg-gray" id="portfolio">-->
+<!--						<div class="container">-->
+
+<!--							<div class="clearfix" id="lightgallery">-->
+<!--								{% for i in images %}-->
+<!--								<li class="web design card-container col-lg-4 col-md-6 col-sm-6 p-a0" style="position: absolute; left: 0px; top: 0px;">-->
+<!--									<div class="dlab-box dlab-gallery-box">-->
+<!--										<div class="dlab-media dlab-img-overlay1 dlab-img-effect">-->
+<!--											<img src="{{ i.image.url }}" alt="">-->
+<!--											<div class="overlay-bx">-->
+<!--												<div class="overlay-icon">-->
+<!--													<div class="text-white">-->
+<!--														<span data-exthumbimage="{{ i.image.url }}" data-src="{{ i.image.url }}" class="check-km" title="Factory Managment">-->
+<!--															<i class="far fa-image icon-bx-xs"></i>-->
+<!--														</span>-->
+<!--													</div>-->
+<!--												</div>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--										<div class="dez-info p-a30 bg-white">-->
+<!--											<p class="dez-title m-t0">{{ i.title }}</p>-->
+
+<!--										</div>-->
+<!--									</div>-->
+<!--								</li>-->
+<!--								{% endfor %}-->
+<!--							</div>-->
+<!--							<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						<br>-->
+<!--						</div>-->
+<!--					</div>-->
+				</div>
+			</div>
+		</div>
+			<!-- About Services info END -->
+			<!-- Counter -->
+
+			<!-- Counter END -->
+			<!-- Team Section -->
+			<div class="section-full bg-white content-inner">
+				<div class="container">
+					<div class="section-head text-center">
+						<h2 class="title">{% trans 'Наша команда' %}</h2>
+						<p>{% get_or_create_content 'Описание команды' %}</p>
+					</div>
+					<div class="row">
+						{% for i in employers %}
+						<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInLeftBig" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="our-team m-b30">
+								<div class="dlab-media radius-sm  zoom dlab-img-effect">
+									<img src="{{ i.image.url }}" alt="">
+								</div>
+								<div class="team-title-bx text-center">
+									<h2 class="title"><a href="team-1.html">{{ i.name }}</a></h2>
+									<span>{{ i.profession }}</span>
+									<p>{{ i.phone_number }}</p>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- Team Section END -->
+
+			<!-- Testimonials -->
+			<div class="section-full content-inner-2 bg-gray">
+				<div class="container">
+					<div class="section-head text-black text-center">
+						<h2 class="title">{% trans '' %}</h2>
+						<p>{% get_or_create_content 'Описание отзывов' %}</p>
+					</div>
+					<div class="testimonial-six owl-loaded owl-theme owl-carousel owl-none dots-style-2">
+						{% for i in testimonials %}
+						<div class="item">
+							<div class="testimonial-8">
+								<div class="testimonial-text">
+									<p>{{ i.description }}</p>
+								</div>
+								<div class="testimonial-detail clearfix">
+									<div class="testimonial-pic radius shadow"><img src="{{ i.photo.url }}" width="100" height="100" alt=""></div>
+									<h5 class="testimonial-name m-t0 m-b5">{{ i.name }}</h5> <span class="testimonial-position">{{ i.profession }}</span>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- Testimonials END -->
+		</div>
+		<!-- contact area END -->
+    </div>
+    <!-- Content END -->
+{% endblock %}

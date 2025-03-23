@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="">
+	<meta name="description" content="{{ site.title }}">
+	<meta property="og:title" content="{{ site.title }}">
+	<meta property="og:description" content="{{ site.about }}">
+	<meta property="og:image" content="{{ site.photo_video.url }}">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- FAVICONS ICON -->
+	<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+
+	<!-- PAGE TITLE HERE -->
+	<title>{% block title %}{% endblock %}</title>
+
+	<!-- MOBILE SPECIFIC -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		.float{
+			position:fixed;
+			width:60px;
+			height:60px;
+			bottom:40px;
+			right:80px;
+			background-color:#25d366;
+			color:#FFF;
+			border-radius:50px;
+			text-align:center;
+		  font-size:30px;
+			box-shadow: 2px 2px 3px #999;
+		  z-index:100;
+		}
+
+		.my-float{
+			margin-top:16px;
+		}
+	</style>
+
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+
+		<!-- STYLESHEETS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link class="skin" rel="stylesheet" type="text/css" href="{% static 'css/skin/skin-5.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/templete.css' %}">
+	<!-- Google Font -->
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+	</style>
+
+	<!-- REVOLUTION SLIDER CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/revolution/revolution/css/revolution.min.css' %}">
+
+</head>
+<body id="bg">
+<div class="page-wraper">
+<div id="loading-area"></div>
+	<!-- header -->
+    <header class="site-header mo-left header ext-header navstyle3">
+		<div class="middle-bar bg-white">
+			<div class="container">
+				<!-- website logo  -->
+				<div class="middle-area">
+					<div class="logo-header logo-dark">
+						<a href="{% url 'home' %}"><img src="{% static 'images/logo-white.png' %}" alt=""></a>
+					</div>
+					<div class="service-list">
+						<ul>
+							<li>
+								<i class="la la-phone"></i>
+								<h4 class="title"><a href="tel:+996557663357">(+996) 557 663 357</a></h4>
+								<span></span>
+							</li>
+							<li>
+								<i class="la la-clock-o"></i>
+								<h4 class="title">08:00 - 20:00</h4>
+								<span>Понедельник - Пятница</span>
+							</li>
+							<li>
+								<i class="la la-map"></i>
+								<h4 class="title">Проспект Победы, 128</h4>
+								<span>город Бишкек</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- main header -->
+        <div class="sticky-header main-bar-wraper navbar-expand-lg">
+            <div class="main-bar clearfix ">
+                <div class="container clearfix">
+                    <!-- website logo -->
+                    <div class="logo-header mostion logo-dark">
+						<a href="index.html"><img src="{% static 'images/logo-5.png' %}" alt=""></a>
+					</div>
+                    <!-- nav toggle button -->
+                    <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+                    <!-- extra nav -->
+                    <div class="extra-nav">
+                        <div class="extra-cell">
+                            <button id="quik-search-btn" type="button" class="site-button-link"><i class="la la-search"></i></button>
+						</div>
+                    </div>
+                    <!-- Quik search -->
+                    <div class="dlab-quik-search ">
+                        <form action="#">
+                            <input name="search" value="" type="text" class="form-control" placeholder="Поиск...">
+                            <span id="quik-search-remove"><i class="ti-close"></i></span>
+                        </form>
+                    </div>
+                    <!-- main nav -->
+                    <div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
+						<div class="logo-header d-md-block d-lg-none">
+							<a href="index.html"><img src="images/logo-5.png" alt=""></a>
+						</div>
+                        <ul class="nav navbar-nav">
+							<li class="active has-mega-menu"> <a href="/">{% trans 'Домой' %}</a>
+							<li>
+								<a href="javascript:;">{% trans 'Сервисы' %}<i class="fas fa-chevron-down"></i></a>
+								<ul class="sub-menu tab-content">
+									<li>
+
+										<a href="javascript:;">Header Light <i class="fas fa-angle-right"></i></a>
+										<ul class="sub-menu">
+											{% for i in services %}
+											<li><a href="{% url 'service_detail' i.pk %}">{{ i.title }}</a></li>
+											{% endfor %}
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="has-mega-menu"> <a href="{% url 'shop' %}">{% trans 'Магазин' %}</a></li>
+							<li class="has-mega-menu">
+								<a href="javascript:;">Каталог<i class="fas fa-chevron-down"></i></a>
+								<ul class="mega-menu">
+									<li>
+										<a href="javascript:;">Pages</a>
+										<ul>
+											<li><a href="about-1.html">About us 1</a></li>
+											<li><a href="about-2.html">About us 2</a></li>
+											<li><a href="services-1.html">Services 1</a></li>
+											<li><a href="services-2.html">Services 2</a></li>
+											<li><a href="services-details.html">Services Details</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:;">Pages</a>
+										<ul>
+
+											<li><a href="team-2.html">Team 2</a></li>
+											<li><a href="faq-1.html">Faqs 1</a></li>
+											<li><a href="faq-2.html">Faqs 2</a></li>
+											<li><a href="portfolio-grid-2.html">portfolio Grid 2</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:;">Pages</a>
+										<ul>
+											<li><a href="portfolio-grid-3.html">Portfolio Grid 3</a></li>
+											<li><a href="portfolio-grid-4.html">Portfolio Grid 4</a></li>
+											<li><a href="portfolio-details.html">Portfolio Details</a></li>
+											<li><a href="error-403.html">Error 403</a></li>
+											<li><a href="error-404.html">Error 404</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:;">Pages</a>
+										<ul>
+											<li><a href="error-405.html">Error 405</a></li>
+											<li><a href="coming-soon-1.html">Coming Soon 1</a></li>
+											<li><a href="coming-soon-2.html">Coming Soon 2</a></li>
+											<li><a href="help-desk.html">Help Desk</a></li>
+											<li><a href="privacy-policy.html">Privacy Policy</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="has-mega-menu"> <a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
+
+							<li class="has-mega-menu"> <a href="{% url 'projects' %}">{% trans 'Проекты' %}<i class="fas fa-chevron-down"></i></a>
+								<ul class="mega-menu">
+									<li><a href="{% url 'projects' %}">{% trans 'Проекты' %}</a>
+										<ul>
+											{% for i in projects %}
+											<li><a href="{% url 'project_detail' i.pk %}"><i class="ti-mouse"></i> {{ i.title }}</a></li>
+											{% endfor %}
+										</ul>
+									</li>
+
+								</ul>
+							</li>
+							<li>
+								<a href="{% url 'about' %}">{% trans 'О нас' %}</a>
+
+							</li>
+
+						</ul>
+						<div class="dlab-social-icon ind-social">
+							<ul>
+								<li><a class="site-button-link facebook fab fa-facebook-f" href="javascript:void(0);"></a></li>
+								<li><a class="site-button-link twitter fab fa-twitter" href="javascript:void(0);"></a></li>
+								<li><a class="site-button-link linkedin fab fa-linkedin-in" href="javascript:void(0);"></a></li>
+								<li><a class="site-button-link instagram fab fa-instagram" href="javascript:void(0);"></a></li>
+							</ul>
+							<p>2024 Industry</p>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main header END -->
+    </header>
+    <!-- header END -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<a href="https://api.whatsapp.com/send?phone=+996775160402&text=Здравствуйте, я пишу вам из сайта ktz.kg." class="float" target="_blank">
+	<i class="fa fa-whatsapp my-float"></i>
+	</a>
+	{% block content %}
+	{% endblock %}
+	<!-- Footer -->
+    <footer class="site-footer footer-full text-white">
+        <div class="p-tb60 bg-primary">
+            <div class="container">
+                <div class="row">
+					<div class="col-md-6 text-md-start text-center footer-logo">
+						<img src="images/logo-light.png" alt="" width="100">
+						<p class="m-b0 m-t10">Copyright &copy; <span class="current-year">2025</span> <a href="" target="_blank">Super-q.kg</a></p>
+					</div>
+					<div class="col-md-6 text-md-end text-center">
+						<div class="widget-link "> 
+							<ul>
+								<li><a href="index.html">Home</a></li> 
+								<li><a href="about-2.html">About us</a></li> 
+								<li><a href="help-desk.html">Help Desk</a></li> 
+								<li><a href="privacy-policy.html">Privacy Policy</a></li> 
+								<li><a href="contact-1.html">Contact Us</a></li> 
+							</ul>
+						</div>
+						<ul class="list-inline m-b0 m-t10">
+							<li><a href="https://www.facebook.com/" target="_blank" class="site-button-link facebook hover"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://www.google.com/" target="_blank" class="site-button-link google-plus hover"><i class="fab fa-google-plus-g"></i></a></li>
+							<li><a href="https://www.linkedin.com/" target="_blank" class="site-button-link linkedin hover"><i class="fab fa-linkedin-in"></i></a></li>
+							<li><a href="https://www.instagram.com/" target="_blank" class="site-button-link instagram hover"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://twitter.com/dexignzones" target="_blank" class="site-button-link twitter hover"><i class="fab fa-twitter"></i></a></li>
+						</ul>
+					</div>
+				</div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer END -->
+    <button class="scroltop fas fa-chevron-up"></button>
+</div>
+<!-- JAVASCRIPT FILES ========================================= -->
+<script src="{% static 'js/jquery.min.js' %}"></script><!-- JQUERY.MIN JS -->
+<script src="{% static 'plugins/wow/wow.js' %}"></script><!-- WOW JS -->
+
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="{% static 'plugins/bootstrap-select/bootstrap-select.min.js' %}"></script><!-- FORM JS -->
+<script src="{% static 'plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js' %}"></script><!-- FORM JS -->
+<script src="{% static 'plugins/magnific-popup/magnific-popup.js' %}"></script><!-- MAGNIFIC POPUP JS -->
+<script src="{% static 'plugins/counter/waypoints-min.js' %}"></script><!-- WAYPOINTS JS -->
+<script src="{% static 'plugins/counter/counterup.min.js' %}"></script><!-- COUNTERUP JS -->
+<script src="{% static 'plugins/imagesloaded/imagesloaded.js' %}"></script><!-- IMAGESLOADED -->
+<script src="{% static 'plugins/masonry/masonry-3.1.4.js' %}"></script><!-- MASONRY -->
+<script src="{% static 'plugins/masonry/masonry.filter.js' %}"></script><!-- MASONRY -->
+<script src="{% static 'plugins/owl-carousel/owl.carousel.js' %}"></script><!-- OWL SLIDER -->
+<script src="{% static 'plugins/lightgallery/js/lightgallery-all.min.js' %}"></script><!-- Lightgallery -->
+<script src="{% static 'plugins/scroll/scrollbar.min.js' %}"></script><!-- scroll -->
+<script src="{% static 'js/custom.js' %}"></script><!-- CUSTOM FUCTIONS  -->
+<script src="{% static 'js/dz.carousel.min.js' %}"></script><!-- SORTCODE FUCTIONS  -->
+<script src="{% static 'plugins/countdown/jquery.countdown.js' %}"></script><!-- COUNTDOWN FUCTIONS  -->
+<script src="{% static 'js/dz.ajax.js' %}"></script><!-- CONTACT JS  -->
+
+
+<script src="{% static 'js/jquery.lazy.min.js' %}"></script>
+<!-- REVOLUTION JS FILES -->
+<script src="{% static 'plugins/revolution/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
+<!-- Slider revolution 5.0 Extensions  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+<script src="{% static 'plugins/revolution/revolution/js/extensions/revolution.extension.actions.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/revolution/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/revolution/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/revolution/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/revolution/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/revolution/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/revolution/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script src="{% static 'plugins/revolution/revolution/js/extensions/revolution.extension.video.min.js' %}"></script>
+<script src="{% static 'js/rev.slider.js' %}"></script>
+<script>
+	var tpj=jQuery;
+	var revapi1164;
+	tpj(document).ready(function() {
+		if(tpj("#rev_slider_1164_1").revolution == undefined){
+			revslider_showDoubleJqueryError("#rev_slider_1164_1");
+		}else{
+			revapi1164 = tpj("#rev_slider_1164_1").show().revolution({
+				sliderType:"standard",
+				jsFileLocation:"plugins/revolution/revolution/js/",
+				sliderLayout:"fullwidth",
+				dottedOverlay:"none",
+				delay:5000,
+				navigation: {
+					keyboardNavigation:"off",
+					keyboard_direction: "horizontal",
+					mouseScrollNavigation:"off",
+					mouseScrollReverse:"default",
+					onHoverStop:"off",
+					touch:{
+						touchenabled:"on",
+						swipe_threshold: 75,
+						swipe_min_touches: 1,
+						swipe_direction: "horizontal",
+						drag_block_vertical: false
+					}
+					,
+					arrows: {
+						style:"gyges",
+						enable:true,
+						hide_onmobile:false,
+						hide_onleave:false,
+						tmp:'',
+						left: {
+							h_align:"right",
+							v_align:"bottom",
+							h_offset:60,
+							v_offset:20
+						},
+						right: {
+							h_align:"right",
+							v_align:"bottom",
+							h_offset:20,
+							v_offset:20
+						}
+					}
+				},
+				responsiveLevels:[1240,1200,778,480],
+				visibilityLevels:[1240,1200,778,480],
+				gridwidth:[1240,1024,778,480],
+				gridheight:[750,600,600,600],
+				lazyType:"single",
+				parallax: {
+					type:"scroll",
+					origo:"slidercenter",
+					speed:400,
+					levels:[5,10,15,20,25,30,35,40,45,46,47,48,49,50,51,55],
+					type:"scroll",
+				},
+				shadow:0,
+				spinner:"off",
+				stopLoop:"on",
+				stopAfterLoops:-1,
+				stopAtSlide:1,
+				shuffle:"off",
+				autoHeight:"off",
+				fullScreenAutoWidth:"off",
+				fullScreenAlignForce:"off",
+				fullScreenOffsetContainer: ".header",
+				fullScreenOffset: "0",
+				disableProgressBar:"on",
+				hideThumbsOnMobile:"off",
+				hideSliderAtLimit:0,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				debugMode:false,
+				fallbacks: {
+					simplifyAll:"off",
+					nextSlideOnWindowFocus:"off",
+					disableFocusListener:false,
+				}
+			});
+		}
+	});	/*ready*/
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+ОСОО КТЗ
+{% endblock %}
+{% block content %}
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(images/banner/bnr4.jpg);">
+            <div class="container">
+                <div class="dlab-bnr-inr-entry">
+                    <h1 class="text-white">{{ project.title }}</h1>
+					<!-- Breadcrumb row -->
+					<div class="breadcrumb-row">
+						<ul class="list-inline">
+							<li><a href="index.html">{% trans 'Домой' %}</a></li>
+							<li>{% trans 'Проекты' %}</li>
+							<li>{{ project.title }}</li>
+						</ul>
+					</div>
+					<!-- Breadcrumb row END -->
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- contact area -->
+        <div class="content-block">
+			<!-- Portfolio Details -->
+			<div class="section-full content-inner bg-white">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 m-b30">
+							<h2 class="text-black font-weight-600 m-b15">{% trans 'Информация' %}</h2>
+							{{ project.description|safe }}
+							<div class="row widget widget_getintuch widget_getintuch-pro-details m-lr0">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 p-lr0">
+									<div class="pro-details">
+										<i class="ti ti-user"></i>
+										<strong>{% trans 'КЛИЕНТ' %}</strong>{{ project.client }}
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 p-lr0">
+									<div class="pro-details">
+										<i class="ti ti-location-pin"></i>
+										<strong>{% trans 'ЛОКАЦИЯ' %}</strong>{{ project.location }}
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 p-lr0">
+									<div class="pro-details">
+										<i class="ti ti-ruler-alt-2"></i>
+										<strong>{% trans 'РАЗМЕРЫ' %}</strong>{{ project.size }}<sup>2</sup>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 p-lr0">
+									<div class="pro-details">
+										<i class="ti ti-home"></i>
+										<strong>{% trans 'ТИП' %}</strong>{{ project.type }}
+									</div>
+								</div>
+							</div>
+							<h2 class="text-black font-weight-600 m-b15">{{ project.title }}</h2>
+							{{ project.secondary_description|safe }}
+
+						</div>
+						<div class="col-lg-6">
+							<div class="row">
+								<div class="col-lg-12 m-b30">
+									{% if project.image1 %}<img alt="" src="{{ project.image1.url }}">{% endif %}
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+									{% if project.image2 %}<img alt="" src="{{ project.image2.url }}">{% endif %}
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+									{% if project.image3 %}<img alt="" src="{{ project.image3.url }}">{% endif %}
+								</div>
+								<div class="col-lg-12 m-b30">
+									{% if project.image4 %}<img alt="" src="{{ project.image4.url }}">{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Portfolio Details End -->
+        </div>
+		<!-- contact area END -->
+    </div>
+    <!-- Content END-->
+{% endblock %}

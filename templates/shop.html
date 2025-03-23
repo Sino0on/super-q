@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+ОСОО КТЗ
+{% endblock %}
+
+{% block content %}
+    <!-- header END -->
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url{% static 'images/banner/bnr5.jpg' %});">
+            <div class="container">
+                <div class="dlab-bnr-inr-entry">
+                    <h1 class="text-white">Товары</h1>
+					<!-- Breadcrumb row -->
+					<div class="breadcrumb-row">
+						<ul class="list-inline">
+							<li><a href="{% url 'home' %}">Домой</a></li>
+							<li>Товары</li>
+						</ul>
+					</div>
+					<!-- Breadcrumb row END -->
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- contact area -->
+        <div class="section-full content-inner">
+            <!-- Product -->
+            <div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-4 m-b30">
+						<aside class="side-bar shop-categories sticky-top">
+                            <div class="widget recent-posts-entry">
+								<div class="dlab-accordion advanced-search toggle" id="accordion1">
+									<div class="panel">
+										<div class="acod-head">
+											<h5 class="acod-title"> 
+												<a data-bs-toggle="collapse" href="#categories">
+													Категории
+												</a> 
+											</h5>
+										</div>
+										<div id="categories" class="acod-body collapse show">
+											<div class="acod-content">
+												<div class="widget widget_services">
+													<ul>
+														{% for i in categories %}
+														<li><a href="{% url 'shop' %}?category={{ i.pk }}">{{ i.title }}</a></li>
+														{% endfor %}
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+									<div class="panel">
+										<div class="acod-head">
+											<h5 class="acod-title">
+												<a data-bs-toggle="collapse"  href="#features">
+													Рекомендуемые товары
+												</a>
+											</h5>
+										</div>
+										<div id="features" class="acod-body collapse show">
+											<div class="acod-content">
+												{% for i in products_rec %}
+												<div class="item-widgets-box">
+													<div class="item-widgets-left">
+														<img src="{{ i.image1.url }}" alt="">
+													</div>
+													<div class="item-widgets-body text-black">
+														<h6 class="item-title text-capitalize font-weight-500 m-t0">
+															<a href="{% url 'product_detail' i.pk %}">{{ i.title }}</a>
+														</h6>
+
+														<h6 class="item-price m-b0">
+
+															<span class="text-primary">{{ i.price }} сом</span>
+														</h6>
+													</div>
+												</div>
+												{% endfor %}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </aside>
+					</div>
+					<div class="col-lg-9 col-md-8 m-b30">
+						<div class="row">
+							{% for i in products %}
+							<div class="col-lg-4 col-md-6 col-sm-6">
+								<div class="item-box m-b10">
+									<div class="item-img">
+										<img src="{{ i.image1.url }}" alt=""/>
+										<div class="item-info-in center">
+											<ul>
+												<li><a href="{% url 'product_detail' i.pk %}"><i class="ti-eye"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="item-info text-center text-black p-a10">
+										<h6 class="item-title font-weight-500"><a href="{% url 'product_detail' i.pk %}">{{ i.title }}</a></h6>
+
+										<h4 class="item-price">
+											<span class="text-primary">{{ i.price }}</span>
+										</h4>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+							<div class="pagination-bx m-b30 clearfix text-center">
+							<ul class="p`agination">
+								{% if page_obj.has_previous %}
+									<li class="previous">
+										<a href="?page={{ page_obj.previous_page_number }}"><i class="ti-arrow-left"></i> {% trans 'Предыдущий' %}</a>
+									</li>
+								{% else %}
+									<li class="previous disabled">
+										<a href="javascript:void(0);"><i class="ti-arrow-left"></i> {% trans 'Предыдущий' %}</a>
+									</li>
+								{% endif %}
+
+								{% for num in page_obj.paginator.page_range %}
+									{% if page_obj.number == num %}
+										<li class="active"><a href="javascript:void(0);">{{ num }}</a></li>
+									{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+										<li><a href="?page={{ num }}">{{ num }}</a></li>
+									{% endif %}
+								{% endfor %}
+
+								{% if page_obj.has_next %}
+									<li class="next">
+										<a href="?page={{ page_obj.next_page_number }}">{% trans 'Следующий' %} <i class="ti-arrow-right"></i></a>
+									</li>
+								{% else %}
+									<li class="next disabled">
+										<a href="javascript:void(0);">{% trans 'Следующий' %} <i class="ti-arrow-right"></i></a>
+									</li>
+								{% endif %}
+							</ul>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+            <!-- Product END -->
+		</div>
+
+    </div>
+    <!-- Content END-->
+{% endblock %}
+

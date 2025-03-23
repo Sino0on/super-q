@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+
+ОСОО КТЗ
+{% endblock %}
+
+{% block content %}
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(images/banner/bnr5.jpg);">
+            <div class="container">
+                <div class="dlab-bnr-inr-entry">
+                    <h1 class="text-white">{{ product.title }}</h1>
+					<!-- Breadcrumb row -->
+					<div class="breadcrumb-row">
+						<ul class="list-inline">
+							<li><a href="index.html">{% trans 'Домой' %}</a></li>
+							<li>{{ product.title }}</li>
+						</ul>
+					</div>
+					<!-- Breadcrumb row END -->
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- contact area -->
+        <div class="section-full content-inner bg-white">
+            <!-- Product details -->
+            <div class="container woo-entry">
+                <div class="row m-b30">
+					<div class="col-md-5 col-lg-5 col-sm-12">
+						<div class="product-gallery on-show-slider lightgallery" id="lightgallery"> 
+							<div id="sync1" class="owl-carousel owl-theme owl-btn-center-lr m-b5 owl-btn-1 primary">
+								<div class="item">
+									<div class="mfp-gallery">
+										<div class="dlab-box">
+											<div class="dlab-thum-bx dlab-img-overlay1 ">
+												<img src="{{ product.image1.url }}" alt="">
+												<div class="overlay-bx">
+													<div class="overlay-icon">
+														<span data-exthumbimage="{{ product.image1.url }}" data-src="{{ product.image1.url }}" class="check-km" title="Image 1 Title will come here">
+															<i class="ti-fullscreen"></i>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								{% if product.image2 %}<div class="item">
+									<div class="mfp-gallery">
+										<div class="dlab-box">
+											<div class="dlab-thum-bx dlab-img-overlay1 ">
+												<img src="{{ product.image2.url }}" alt="">
+												<div class="overlay-bx">
+													<div class="overlay-icon">
+														<span data-exthumbimage="{{ product.image2.url }}" data-src="{{ product.image2.url }}" class="check-km" title="Image 2 Title will come here">
+															<i class="ti-fullscreen"></i>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>{% endif %}
+								{% if product.image3 %}<div class="item">
+									<div class="mfp-gallery">
+										<div class="dlab-box">
+											<div class="dlab-thum-bx dlab-img-overlay1 ">
+												<img src="{{ product.image3.url }}" alt="">
+												<div class="overlay-bx">
+													<div class="overlay-icon">
+														<span data-exthumbimage="{{ product.image3.url }}" data-src="images/product/item2/item2.jpg" class="check-km" title="Image 2 Title will come here">
+															<i class="ti-fullscreen"></i>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>{% endif %}
+								{% if product.image4 %}<div class="item">
+									<div class="mfp-gallery">
+										<div class="dlab-box">
+											<div class="dlab-thum-bx dlab-img-overlay1 ">
+												<img src="{{ product.image4.url }}" alt="">
+												<div class="overlay-bx">
+													<div class="overlay-icon">
+														<span data-exthumbimage="{{ product.image4.url }}" data-src="{{ product.image4.url }}" class="check-km" title="Image 2 Title will come here">
+															<i class="ti-fullscreen"></i>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>{% endif %}
+							</div>
+							<div id="sync2" class="owl-carousel owl-theme owl-none">
+								{% if product.image1 %}<div class="item">
+									<div class="dlab-media">
+										<img src="{{ product.image1.url }}" alt="">
+									</div>
+								</div>{% endif %}
+								{% if product.image2 %}<div class="item">
+									<div class="dlab-media">
+										<img src="{{ product.image2.url }}" alt="">
+									</div>
+								</div>{% endif %}
+								{% if product.image3 %}<div class="item">
+									<div class="dlab-media">
+										<img src="{{ product.image3.url }}" alt="">
+									</div>
+								</div>{% endif %}
+								{% if product.image4 %}<div class="item">
+									<div class="dlab-media">
+										<img src="{{ product.image4.url }}" alt="">
+									</div>
+								</div>{% endif %}
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7 col-lg-7 col-sm-12">
+						<form method="post" class="cart sticky-top">
+							<div class="dlab-post-title">
+								<h4 class="post-title"><a href="javascript:void(0);">{{ product.title }}</a></h4>
+								<p class="m-b10">{{ product.mini_description|safe }}</p>
+								<div class="dlab-divider bg-gray tb15">
+									<i class="icon-dot c-square"></i>
+								</div>
+							</div>
+							<div class="relative">
+								<h3 class="m-tb10">{{ product.price }} </h3>
+
+							</div>
+							<br>
+							<div class="shop-item-tage">
+								<span>{% trans 'Категория' %} :- </span>
+								<a href="{% url 'shop' %}?category={{ product.category.id }}">{{ product.category.title }}</a>
+							</div>
+							<br>
+							<button class="site-button radius-no">
+								<a style="color: white" href="{% url 'contact' %}?product={{product.pk}}"><i class="ti-shopping-cart"></i> {% trans 'Оформить' %}</a>
+							</button>
+						</form>
+					</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="dlab-tabs  product-description tabs-site-button">
+                            <ul class="nav nav-tabs ">
+                                <li><a data-bs-toggle="tab" href="#web-design-1" class="active"><i class="fas fa-globe"></i> {% trans 'Описание' %}</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="web-design-1" class="tab-pane active">
+									{{ product.description|safe }}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="row">
+					<div class="col-lg-12">
+						<h5 class="m-b20">{% trans 'Рекомендация' %}</h5>
+						<div class="img-carousel-content owl-carousel owl-btn-center-lr owl-btn-1 primary">
+							{% for i in products_rec %}
+							<div class="item">
+								<div class="item-box">
+									<div class="item-img">
+										<img src="{{ i.image1.url }}" alt="">
+										<div class="item-info-in">
+											<ul>
+												<li><a href="{% url 'product_detail' i.pk %}"><i class="ti-shopping-cart"></i></a></li>
+												<li><a href="{% url 'product_detail' i.pk %}"><i class="ti-eye"></i></a></li>
+												<li><a href="{% url 'product_detail' i.pk %}"><i class="ti-heart"></i></a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="item-info text-center text-black p-a10">
+										<h6 class="item-title text-uppercase font-weight-500"><a href="{% url 'product_detail' i.pk %}">{{ i.title }}</a></h6>
+
+										<h4 class="item-price">	
+											<span class="text-primary">{{ i.price }}</span>
+										</h4>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+            <!-- Product details -->
+        </div>
+        <!-- contact area  END -->
+		<!-- Shop Service info -->
+		<div class="section-full p-t50 p-b20 bg-primary text-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-lg-4">
+						<div class="icon-bx-wraper left shop-service-info m-b30">
+							<div class="icon-md text-black radius"> 
+								<a href="javascript:void(0);" class="icon-cell text-white"><i class="fas fa-gift"></i></a> 
+							</div>
+							<div class="icon-content">
+								<h5 class="dlab-tilte">Free shipping on orders $60+</h5>
+								<p>Order more than 60$ and you will get free shippining Worldwide. More info.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-4">
+						<div class="icon-bx-wraper left shop-service-info m-b30">
+							<div class="icon-md text-black radius"> 
+								<a href="javascript:void(0);" class="icon-cell text-white"><i class="fas fa-plane"></i></a> 
+							</div>
+							<div class="icon-content">
+								<h5 class="dlab-tilte">Worldwide delivery</h5>
+								<p>We deliver to the following countries: USA, Canada, Europe, Australia</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-lg-4">
+						<div class="icon-bx-wraper left shop-service-info m-b30">
+							<div class="icon-md text-black radius"> 
+								<a href="javascript:void(0);" class="icon-cell text-white"><i class="fas fa-history"></i></a> 
+							</div>
+							<div class="icon-content">
+								<h5 class="dlab-tilte">60 days money back guranty!</h5>
+								<p>Not happy with our product, feel free to return it, we will refund 100% your money!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Shop Service info End -->
+    </div>
+    <!-- Content END-->
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+ОСОО КТЗ
+{% endblock %}
+
+{% block content %}
+    <!-- header END -->
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(images/banner/bnr2.jpg);">
+            <div class="container">
+                <div class="dlab-bnr-inr-entry">
+                    <h1 class="text-white">{{ service.title }}</h1>
+					<!-- Breadcrumb row -->
+					<div class="breadcrumb-row">
+						<ul class="list-inline">
+							<li><a href="{% url 'home' %}">{% trans 'Домой' %}</a></li>
+							<li>{% trans 'Услуга' %}</li>
+							<li>{{ service.title }}</li>
+						</ul>
+					</div>
+					<!-- Breadcrumb row END -->
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- contact area -->
+        <div class="content-block">
+			<!-- About Us -->
+			<div class="section-full content-inner">
+                <div class="container">
+					<div class="row">
+						<div class="col-xl-3 col-lg-4 col-md-5">
+							<div class="widget sidebar-widget ext-sidebar-menu widget_nav_menu">
+								<ul class="menu">
+									<li><a href="{% url 'services' %}">{% trans 'Все сервисы' %}</a> </li>
+									{% for i in services %}
+									<li {% if service.title == i.title %} class="active"{% endif %}><a href="{% url 'service_detail' i.pk %}">{{ i.title }}</a>  </li>
+									{% endfor %}
+								</ul>
+							</div>
+
+						</div>
+						<div class="col-xl-9 col-lg-8 col-md-7 m-b30">
+							<div class="row">
+								<div class="col-lg-6 col-md-12 m-b30">
+									<div class="dlab-box">
+										{% if service.image1 %}<div class="dlab-media"> <a href="javascript:void(0);"><img src="{{ service.image1.url }}" alt=""></a> </div>{% endif %}
+										<div class="dlab-info m-t30 ">
+											<h4 class="dlab-title m-t0"><a href="javascript:void(0);">{{ service.title }} </a></h4>
+											<p>{{ service.description }}</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-12">
+									<div class="dlab-box">
+										{% if service.image2 %}<div class="dlab-media m-b30 p-b5"> <a href="javascript:void(0);"><img src="{{ service.image2.url }}" alt=""></a></div>{% endif %}
+										{% if service.image3 %}<div class="dlab-media"> <a href="javascript:void(0);"><img src="{{ service.image3.url }}" alt=""></a></div>{% endif %}
+										<div class="dlab-info m-t30">
+											<h4 class="dlab-title m-t0"><a href="javascript:void(0);">{{ service.subtitle }}</a></h4>
+											<p>{{ service.secondary_description }}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+            <!-- Our Services -->
+		</div>
+		<!-- contact area END -->
+    </div>
+    <!-- Content END-->
+{% endblock %}

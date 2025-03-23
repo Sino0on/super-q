@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% load i18n %}
+{% block title %}
+ОСОО КТЗ
+{% endblock %}
+
+{% block content %}
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(images/banner/bnr2.jpg);">
+            <div class="container">
+                <div class="dlab-bnr-inr-entry">
+                    <h1 class="text-white">{% trans 'Сервисы' %}</h1>
+					<!-- Breadcrumb row -->
+					<div class="breadcrumb-row">
+						<ul class="list-inline">
+							<li><a href="index.html">{% trans 'Домой' %}</a></li>
+							<li>{% trans 'Сервисы' %}</li>
+						</ul>
+					</div>
+					<!-- Breadcrumb row END -->
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- contact area -->
+        <div class="content-block">
+			<!-- About Us -->
+			<div class="section-full content-inner bg-gray">
+                <div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-md-12">
+							<div class="section-head text-black">
+								<h4 class="text-gray-dark font-weight-300 m-b10">{% trans 'Сервисы' %}</h4>
+								<h2 class="title">{% trans 'Сервисы которые мы предоставляем нашим клиентам' %}</h2>
+								<p>{% get_or_create_content 'описание лист сервиса' %}</p>
+							</div>
+							<div class="section-content row">
+								{% for i in services %}
+								<a href="{% url 'service_detail' i.pk %}">
+								<div class="col-lg-6 col-md-6 service-box style3">
+									<div class="icon-bx-wraper" data-name="{{ forloop.counter }}">
+
+										<div class="icon-content">
+											<h2 class="dlab-tilte">{{ i.title }}</h2>
+											<p>{{ i.subtitle }}</p>
+										</div>
+									</div>
+								</div></a>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-12">
+							<div class="sticky-top m-b30">
+							<form method="post" class="inquiry-form wow box-shadow bg-white fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+							<h3 class="title-box font-weight-300 m-t0 m-b10">{% trans 'Свяжитесь с нами' %} <span class="bg-primary"></span></h3>
+							<p>{% trans 'Оставьте заявку и мы с вами свяжемся' %}</p>
+							<div class="row">
+								<div class="col-lg-6 col-md-6">
+									<div class="form-group">
+										{% csrf_token %}
+										<div class="input-group">
+											<span class="input-group-addon"><i class="ti-user text-primary"></i></span>
+											<input name="first_name" type="text" required="" class="form-control" placeholder="{% trans 'Имя' %}">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6">
+									<div class="form-group">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="ti-mobile text-primary"></i></span>
+											<input name="phone" type="text" required="" class="form-control" placeholder="{% trans 'Номер телефона' %}">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12">
+									<div class="form-group">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="ti-email text-primary"></i></span>
+											<input name="email" type="email" class="form-control" required="" placeholder="{% trans 'Ваша почта' %}">
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6">
+									<div class="form-group">
+										<div class="input-group flex-nowrap" style="width: 130%">
+											<span class="input-group-addon"><i class="ti-check-box text-primary"></i></span>
+											<div class="dropdown bootstrap-select dropup">
+												<select name="industry" class="" tabindex="null">
+												<option>{% trans 'Выберите тип' %}</option>
+												{% for i in industry %}
+												<option value="{{ i.pk }}">{{ i.title }}</option>
+												{% endfor %}
+											</select>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-12 col-md-12">
+									<div class="form-group">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="ti-agenda text-primary"></i></span>
+											<textarea name="comment" rows="4" class="form-control" required="" placeholder="{% trans 'Комментарий' %}"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12">
+									<button name="submit" type="submit" value="Submit" class="site-button button-md"> <span>{% trans 'Оставить заявку' %}</span> </button>
+								</div>
+							</div>
+						</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- contact area END -->
+    </div>
+    <!-- Content END-->
+{% endblock %}
