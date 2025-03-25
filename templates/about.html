@@ -4,7 +4,7 @@
 {% load custom_filters %}
 {% block title %}
 
-ОСОО КТЗ
+Super-q KG
 {% endblock %}
 {% block content %}
     <!-- Content -->
@@ -17,7 +17,7 @@
 					<!-- Breadcrumb row -->
 					<div class="breadcrumb-row">
 						<ul class="list-inline">
-							<li><a href="index.html">{% trans 'Домой' %}</a></li>
+							<li><a href="{% url 'home' %}">{% trans 'Домой' %}</a></li>
 							<li>{% trans 'О нас' %}</li>
 						</ul>
 					</div>
@@ -156,7 +156,7 @@
 									<img src="{{ i.image.url }}" alt="">
 								</div>
 								<div class="team-title-bx text-center">
-									<h2 class="title"><a href="team-1.html">{{ i.name }}</a></h2>
+									<h2 class="title"><a href="#">{{ i.name }}</a></h2>
 									<span>{{ i.profession }}</span>
 									<p>{{ i.phone_number }}</p>
 								</div>

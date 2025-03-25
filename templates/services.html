@@ -3,7 +3,7 @@
 {% load custom_filters %}
 {% load i18n %}
 {% block title %}
-ОСОО КТЗ
+Super-q KG
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@
 					<!-- Breadcrumb row -->
 					<div class="breadcrumb-row">
 						<ul class="list-inline">
-							<li><a href="index.html">{% trans 'Домой' %}</a></li>
+							<li><a href="{% url 'home' %}">{% trans 'Домой' %}</a></li>
 							<li>{% trans 'Сервисы' %}</li>
 						</ul>
 					</div>

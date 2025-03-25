@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
+{% block title %}
+Super-q KG
+{% endblock %}
 
 {% block content %}
 	<!-- Content -->
@@ -144,7 +147,7 @@
 					<div class="row">
 						<div class="col-lg-9 text-white">
 							<h2 class="title">Моторные масла, автокосметика и автохимия SUPER-Q </h2>
-							<p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+							<p class="m-b0">Моторные масла SUPER-Q одобрены многими ведущими мировыми автопроизводителями</p>
 						</div>
 						<div class="col-lg-3 d-flex">
 							<a href="{% url 'contact' %}" class="site-button btnhover10 white align-self-center outline ms-auto radius-xl outline-2">Свяжитесь с нам </a>
@@ -168,11 +171,11 @@
 						<div class="col-lg-6 m-b30 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
 							<div class="content-bx1">
 								<div class="section-head">
-									<h2 class="title">Quality Products <br>With Sweet eggs a breads </h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie nec nisl eget scelerisque. Quisque placerat suscipit eros, eu tincidunt tellus blandit vel. Donec pellentesque dapibus interdum. Mauris et tellus congue, rutrum neque a, varius felis.</p>
+									<h2 class="title">О моторных маслах Super-Q </h2>
+									<p>SUPER-Q Engine Oils & Lubricants — высококачественные моторные масла и смазочные материалы, созданные в Южной Корее. Это 100% корейский бренд, гарантирующий надежность и контроль качества на каждом этапе производства.</p>
 								</div>
-								<a href="contact-2.html" class="site-button btnhover10 black m-r10 m-b10">Contact us</a>
-								<a href="portfolio-details.html" class="site-button btnhover10 black m-b10">View portfolio</a>
+								<a href="{% url 'contact' %}" class="site-button btnhover10 black m-r10 m-b10">Свяжитесь с нами</a>
+								<a href="{% url 'shop' %}" class="site-button btnhover10 black m-b10">Посмотреть каталог</a>
 							</div>
 						</div>
 					</div>
@@ -232,9 +235,10 @@
 					</div>
 					<div class="col-xl-6 col-lg-12 p-lr0 d-flex dis-tbl latest-project-info bg-primary wow bounceInRight" data-wow-duration="2s" data-wow-delay="0.3s">
 						<div class="text-white align-self-center ">
-							<h2>Our Latest Item Food Industry</h2>
-							<p>Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper <span class="text-white">metus in erat viverra</span>, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada vel. Praesent pharetra orci odio, ut mattis tellus ullamcorper ornare. Suspendisse ullamcorper <span class="text-white">metus in erat viverra</span>, vehicula pharetra dolor accumsan. In arcu ex, rutrum finibus malesuada vel.</p>
-							<a href="portfolio-details.html" class="site-button btnhover10 white">View Project</a>
+							<h2>Самая лучшая продукция Super-Q</h2>
+							<p>Благодаря современным технологиям, масла SUPER-Q обеспечивают отличную защиту двигателя, продлевают срок его службы и соответствуют самым высоким требованиям профессионалов.
+Наши партнеры предлагают полный спектр услуг: техническое обслуживание, ремонт, проверку на соответствие стандартам (WOF), обслуживание тормозов, глушителей, амортизаторов, шин, а также профессиональные консультации.</p>
+							<a href="{% url 'shop' %}" class="site-button btnhover10 white">Посмотреть каталог</a>
 						</div>
 					</div>
 				</div>
@@ -244,8 +248,12 @@
 			<div class="section-full bg-white content-inner-2">
                 <div class="container">
                     <div class="section-head text-center">
-						<h2 class="title">Our Gallery</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+						<h2 class="title">Сертификация и стандарты</h2>
+						<p>Продукция SUPER-Q производится в строгом соответствии с международными стандартами. Мы гордимся своим высоким уровнем ответственности за:
+	•	Качество продукции
+	•	Безопасность сотрудников
+	•	Защиту окружающей среды
+	•	Соблюдение требований наших клиентов по всему миру</p>
 					</div>
 					<div class="row">
 						<div class="col-lg-12 text-center">
@@ -259,52 +267,52 @@
 							</div>
 						</div>
 					</div>
-					<div class="row sp15">
-						<div class="col-lg-12">
-							<ul id="masonry" class="dlab-gallery-listing gallery mfp-gallery text-center">
-								<li class="card-container col-lg-3 col-md-6 col-sm-6 healty food m-b15 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
-									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">
-										<img src="images/gallery/food/pic1.jpg" alt="">
-										<div class="overlay-bx">
-											<div class="portinner">
-												<h3 class="port-title"><a href="portfolio-details.html">Cookies</a></h3>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="card-container col-lg-3 col-md-6 col-sm-6 food organic m-b15 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
-									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">
-										<img src="images/gallery/food/pic2.jpg" alt="">
-										<div class="overlay-bx">
-											<div class="portinner">
-												<h3 class="port-title"><a href="portfolio-details.html">Ice cream</a></h3>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="card-container col-lg-3 col-md-6 col-sm-6 healty m-b15 wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.3s">
-									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">
-										<img src="images/gallery/food/pic3.jpg" alt="">
-										<div class="overlay-bx">
-											<div class="portinner">
-												<h3 class="port-title"><a href="portfolio-details.html">Bear cup</a></h3>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="card-container col-lg-3 col-md-6 col-sm-6 healty food m-b15 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
-									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">
-										<img src="images/gallery/food/pic4.jpg" alt="">
-										<div class="overlay-bx">
-											<div class="portinner">
-												<h3 class="port-title"><a href="portfolio-details.html">Burger</a></h3>
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
+<!--					<div class="row sp15">-->
+<!--						<div class="col-lg-12">-->
+<!--							<ul id="masonry" class="dlab-gallery-listing gallery mfp-gallery text-center">-->
+<!--								<li class="card-container col-lg-3 col-md-6 col-sm-6 healty food m-b15 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s">-->
+<!--									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">-->
+<!--										<img src="images/gallery/food/pic1.jpg" alt="">-->
+<!--										<div class="overlay-bx">-->
+<!--											<div class="portinner">-->
+<!--												<h3 class="port-title"><a href="portfolio-details.html">Cookies</a></h3>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</li>-->
+<!--								<li class="card-container col-lg-3 col-md-6 col-sm-6 food organic m-b15 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">-->
+<!--									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">-->
+<!--										<img src="images/gallery/food/pic2.jpg" alt="">-->
+<!--										<div class="overlay-bx">-->
+<!--											<div class="portinner">-->
+<!--												<h3 class="port-title"><a href="portfolio-details.html">Ice cream</a></h3>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</li>-->
+<!--								<li class="card-container col-lg-3 col-md-6 col-sm-6 healty m-b15 wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.3s">-->
+<!--									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">-->
+<!--										<img src="images/gallery/food/pic3.jpg" alt="">-->
+<!--										<div class="overlay-bx">-->
+<!--											<div class="portinner">-->
+<!--												<h3 class="port-title"><a href="portfolio-details.html">Bear cup</a></h3>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</li>-->
+<!--								<li class="card-container col-lg-3 col-md-6 col-sm-6 healty food m-b15 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">-->
+<!--									<div class="dlab-media dlab-img-overlay1 dlab-img-effect portbox1 style1">-->
+<!--										<img src="images/gallery/food/pic4.jpg" alt="">-->
+<!--										<div class="overlay-bx">-->
+<!--											<div class="portinner">-->
+<!--												<h3 class="port-title"><a href="portfolio-details.html">Burger</a></h3>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</li>-->
+<!--							</ul>-->
+<!--						</div>-->
+<!--					</div>-->
 				</div>
 			</div>
 			<!-- Latest Project End -->
@@ -312,72 +320,19 @@
 			<div class="section-full bg-primary content-inner">
                 <div class="container">
 					<div class="row">
+						{% for category in categories %}
 						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
 							<div class="icon-bx-wraper sr-iconbox1">
 								<div class="icon-lg m-b20 icon-up">
-									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon1.png" alt=""></a>
+									<a href="{% url 'shop' %}?category={{ category.pk }}" class="icon-cell"><img src="{{ category.image.url }}" alt=""></a>
 								</div>
 								<div class="icon-content">
-									<h4 class="dlab-tilte">Cookies</h4>
-									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
+									<h4 class="dlab-tilte">{{ category.title }}</h4>
+<!--									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>-->
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInUp" data-wow-duration="2s" data-wow-delay="0.3s">
-							<div class="icon-bx-wraper sr-iconbox1">
-								<div class="icon-lg m-b20 icon-up">
-									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon2.png" alt=""></a>
-								</div>
-								<div class="icon-content">
-									<h4 class="dlab-tilte">Pizza</h4>
-									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInRight" data-wow-duration="2s" data-wow-delay="0.3s">
-							<div class="icon-bx-wraper sr-iconbox1">
-								<div class="icon-lg m-b20 icon-up">
-									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon3.png" alt=""></a>
-								</div>
-								<div class="icon-content">
-									<h4 class="dlab-tilte">Ice cream</h4>
-									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInLeft" data-wow-duration="2s" data-wow-delay="0.3s">
-							<div class="icon-bx-wraper sr-iconbox1">
-								<div class="icon-lg m-b20 icon-up">
-									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon4.png" alt=""></a>
-								</div>
-								<div class="icon-content">
-									<h4 class="dlab-tilte">Bear cup</h4>
-									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInDown" data-wow-duration="2s" data-wow-delay="0.3s">
-							<div class="icon-bx-wraper sr-iconbox1">
-								<div class="icon-lg m-b20 icon-up">
-									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon5.png" alt=""></a>
-								</div>
-								<div class="icon-content">
-									<h4 class="dlab-tilte">Chikan</h4>
-									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 col-sm-6 m-b30 wow bounceInRight" data-wow-duration="2s" data-wow-delay="0.3s">
-							<div class="icon-bx-wraper sr-iconbox1">
-								<div class="icon-lg m-b20 icon-up">
-									<a href="javascript:void(0)" class="icon-cell"><img src="images/icon/food/icon6.png" alt=""></a>
-								</div>
-								<div class="icon-content">
-									<h4 class="dlab-tilte">Burger</h4>
-									<p>I have worked with many companies offering supplemental industrial services, and out of all those companies </p>
-								</div>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
 				</div>	
 			</div>
@@ -386,218 +341,95 @@
 			<div class="section-full bg-white content-inner">
                 <div class="container">
                     <div class="section-head text-center">
-						<h2 class="title">Our Team</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+						<h2 class="title">Наша команда</h2>
+<!--						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>-->
 					</div>
 					<div class="row">
+						{% for i in employers %}
 						<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0.3s"> 
 							<div class="dlab-box m-b30 dlab-team4">
 								<div class="dlab-media">
-									<a href="team-1.html">
-										<img alt="" src="images/our-team/team-bx/pic1.jpg">
+									<a href="#">
+										<img alt="" src="{{ i.image.url }}">
 									</a>
 								</div>
 								<div class="dlab-info">
-									<h4 class="dlab-title"><a href="team-1.html">Nashid Martines</a></h4>
-									<span class="dlab-position">Director</span>
-									<ul class="dlab-social-icon">
-										<li><a class="site-button circle-sm gray-light fab fa-facebook-f" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-twitter" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-pinterest-p" href="javascript:void(0);"></a></li>
-									</ul>
+									<h4 class="dlab-title"><a href="#">{{ i.name }}</a></h4>
+									<span class="dlab-position">{{ i.profession }}</span>
+									<p>{{ i.phone_number }}</p>
+
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
-							<div class="dlab-box m-b30 dlab-team4">
-								<div class="dlab-media">
-									<a href="team-1.html">
-										<img alt="" src="images/our-team/team-bx/pic2.jpg">
-									</a>
-								</div>
-								<div class="dlab-info">
-									<h4 class="dlab-title"><a href="team-1.html">Konne Backfield</a></h4>
-									<span class="dlab-position">Designer</span>
-									<ul class="dlab-social-icon">
-										<li><a class="site-button circle-sm gray-light fab fa-facebook-f" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-twitter" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-pinterest-p" href="javascript:void(0);"></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.3s">
-							<div class="dlab-box m-b30 dlab-team4">
-								<div class="dlab-media">
-									<a href="team-1.html">
-										<img alt="" src="images/our-team/team-bx/pic3.jpg">
-									</a>
-								</div>
-								<div class="dlab-info">
-									<h4 class="dlab-title"><a href="team-1.html">Hackson Willingham</a></h4>
-									<span class="dlab-position">Developer</span>
-									<ul class="dlab-social-icon">
-										<li><a class="site-button circle-sm gray-light fab fa-facebook-f" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-twitter" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-pinterest-p" href="javascript:void(0);"></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.3s">
-							<div class="dlab-box m-b30 dlab-team4">
-								<div class="dlab-media">
-									<a href="team-1.html">
-										<img alt="" src="images/our-team/team-bx/pic4.jpg">
-									</a>
-								</div>
-								<div class="dlab-info">
-									<h4 class="dlab-title"><a href="team-1.html">Konne Backfield</a></h4>
-									<span class="dlab-position">Manager</span>
-									<ul class="dlab-social-icon">
-										<li><a class="site-button circle-sm gray-light fab fa-facebook-f" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-twitter" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-linkedin-in" href="javascript:void(0);"></a></li>
-										<li><a class="site-button circle-sm gray-light fab fa-pinterest-p" href="javascript:void(0);"></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
 			<!-- Our Team End -->
+			<!-- Latest blog -->
+			<div class="section-full content-inner bg-gray">
+				<div class="container">
+					<div class="section-head style2 text-center">
+						<h2 class="title">Наши новости</h2>
+<!--						<p>er since the been when an unknown printer.</p>-->
+					</div>
+					<div class="blog-carousel owl-none owl-carousel">
+						{% for i in news %}
+						<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
+							<div class="blog-post post-style-2">
+								<div class="dlab-post-media dlab-img-effect zoom">
+									<a href="blog-single.html"><img src="{{ i.main_image.url }}" alt=""></a>
+								</div>
+								<div class="dlab-post-info">
+									<div class="dlab-post-meta">
+										<ul>
+											<li class="post-date"> <strong>{{ i.create_at }}</strong> </li>
+										</ul>
+									</div>
+									<div class="dlab-post-title">
+										<h4 class="post-title"><a href="blog-single.html">{{ i.title }}</a></h4>
+									</div>
+									<div class="dlab-post-readmore">
+										<a href="blog-single.html" title="READ MORE" rel="bookmark" class="site-button btnhover10">Подробнее</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<!-- Latest blog END -->
 			<!-- Testimonials -->
-			<div class="section-full content-inner-2 bg-primary wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s"> 
+			<div class="section-full content-inner-2 bg-primary wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s">
 				<div class="container">
 					<div class="section-head style2 text-center text-white">
-						<h2 class="title">Testimonials</h2>
-						<p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+						<h2 class="title">Отзывы</h2>
+						<p>Описание отзывов</p>
 					</div>
 					<div class="section-content">
 						<div class="testimonial-one-dots owl-carousel owl-btn-center-lr owl-btn-3 owl-theme owl-btn-white testimonial-11-area  owl-dots-white-full">
+							{% for i in testimonials %}
 							<div class="item">
 								<div class="testimonial-11 text-white">
 									<div class="testimonial-pic">
-										<img src="images/our-team/pic1.jpg" alt="">
+										<img src="{{ i.photo.url }}" alt="">
 									</div>
 									<div class="testimonial-detail clearfix">
 										<div class="testimonial-text">
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an printer took a galley of type and scrambled it to make [...]</p>
+											<p>{{ i.description }}</p>
 										</div>
-										<h5 class="testimonial-name m-t0 m-b5">David Matin</h5> <span class="testimonial-position">Student</span> 
+										<h5 class="testimonial-name m-t10 m-b5">{{ i.name }}</h5>
+										<span class="testimonial-position text-primary">{{ i.profession }}</span>
 									</div>
 								</div>
 							</div>
-							<div class="item">
-								<div class="testimonial-11 text-white">
-									<div class="testimonial-pic">
-										<img src="images/our-team/pic2.jpg" alt="">
-									</div>
-									<div class="testimonial-detail clearfix">
-										<div class="testimonial-text">
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an printer took a galley of type and scrambled it to make [...]</p>
-										</div>
-										<h5 class="testimonial-name m-t0 m-b5">David Matin</h5> <span class="testimonial-position">Student</span> 
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="testimonial-11 text-white">
-									<div class="testimonial-pic">
-										<img src="images/our-team/pic3.jpg" alt="">
-									</div>
-									<div class="testimonial-detail clearfix">
-										<div class="testimonial-text">
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an printer took a galley of type and scrambled it to make [...]</p>
-										</div>
-										<h5 class="testimonial-name m-t0 m-b5">David Matin</h5> <span class="testimonial-position">Student</span> 
-									</div>
-								</div>
-							</div>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Testimonials End -->
-			<!-- Latest blog -->
-			<div class="section-full content-inner bg-gray">
-				<div class="container">
-					<div class="section-head style2 text-center">
-						<h2 class="title">Latest blog post</h2>
-						<p>There are many variations of passages of Lorem Ipsum typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
-					</div>
-					<div class="blog-carousel owl-none owl-carousel">
-						<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">
-							<div class="blog-post post-style-2">
-								<div class="dlab-post-media dlab-img-effect zoom">
-									<a href="blog-single.html"><img src="images/blog/latest-blog/pic1.jpg" alt=""></a>
-								</div>
-								<div class="dlab-post-info">
-									<div class="dlab-post-meta">
-										<ul>
-											<li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li>
-											<li class="post-author"> By <a href="blog-single.html">demongo</a> </li>
-										</ul>
-									</div>
-									<div class="dlab-post-title">
-										<h4 class="post-title"><a href="blog-single.html">Why You Should Not Go To Industry</a></h4>
-									</div>
-									<div class="dlab-post-readmore">
-										<a href="blog-single.html" title="READ MORE" rel="bookmark" class="site-button btnhover10">READ MORE</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
-							<div class="blog-post post-style-2">
-								<div class="dlab-post-media dlab-img-effect zoom">
-									<a href="blog-single.html"><img src="images/blog/latest-blog/pic2.jpg" alt=""></a>
-								</div>
-								<div class="dlab-post-info">
-									<div class="dlab-post-meta">
-										<ul>
-											<li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li>
-											<li class="post-author"> By <a href="blog-single.html">AARON</a> </li>
-										</ul>
-									</div>
-									<div class="dlab-post-title ">
-										<h4 class="post-title"><a href="blog-single.html">Seven Doubts You Should Clarify About</a></h4>
-									</div>
-									<div class="dlab-post-readmore">
-										<a href="blog-single.html" title="READ MORE" rel="bookmark" class="site-button btnhover10">READ MORE</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.9s">
-							<div class="blog-post post-style-2">
-								<div class="dlab-post-media dlab-img-effect zoom"> 
-									<a href="blog-single.html"><img src="images/blog/latest-blog/pic3.jpg" alt=""></a>
-								</div>
-								<div class="dlab-post-info">
-									<div class="dlab-post-meta">
-										<ul>
-											<li class="post-date"> <strong>10 Aug</strong> <span> 2016</span> </li>
-											<li class="post-author"> By <a href="blog-single.html">VICTORIA</a> </li>
-										</ul>
-									</div>
-									<div class="dlab-post-title">
-										<h4 class="post-title"><a href="blog-single.html">Seven Outrageous Ideas Industry</a></h4>
-									</div>
-									<div class="dlab-post-readmore">
-										<a href="blog-single.html" title="READ MORE" rel="bookmark" class="site-button btnhover10">READ MORE</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Latest blog END -->
 		</div>
 		<!-- contact area END -->
     </div>

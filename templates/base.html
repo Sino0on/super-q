@@ -15,8 +15,8 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- FAVICONS ICON -->
-	<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+	<link rel="icon" href="{% static 'images/logo-white.png' %}" type="image/x-icon">
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo-white.png' %}">
 
 	<!-- PAGE TITLE HERE -->
 	<title>{% block title %}{% endblock %}</title>
@@ -105,7 +105,7 @@
                 <div class="container clearfix">
                     <!-- website logo -->
                     <div class="logo-header mostion logo-dark">
-						<a href="index.html"><img src="{% static 'images/logo-5.png' %}" alt=""></a>
+						<a href="{% url 'home' %}"><img src="{% static 'images/logo-5.png' %}" alt=""></a>
 					</div>
                     <!-- nav toggle button -->
                     <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -129,75 +129,41 @@
                     <!-- main nav -->
                     <div class="header-nav navbar-collapse collapse justify-content-start" id="navbarNavDropdown">
 						<div class="logo-header d-md-block d-lg-none">
-							<a href="index.html"><img src="images/logo-5.png" alt=""></a>
+							<a href="{% url 'home' %}"><img src="images/logo-5.png" alt=""></a>
 						</div>
                         <ul class="nav navbar-nav">
 							<li class="active has-mega-menu"> <a href="/">{% trans 'Домой' %}</a>
 							<li>
-								<a href="javascript:;">{% trans 'Сервисы' %}<i class="fas fa-chevron-down"></i></a>
+								<a href="{% url 'services' %}">{% trans 'Сервисы' %}<i class="fas fa-chevron-down"></i></a>
 								<ul class="sub-menu tab-content">
 									<li>
-
-										<a href="javascript:;">Header Light <i class="fas fa-angle-right"></i></a>
-										<ul class="sub-menu">
-											{% for i in services %}
-											<li><a href="{% url 'service_detail' i.pk %}">{{ i.title }}</a></li>
-											{% endfor %}
-										</ul>
+										{% for i in services %}
+										<a href="{% url 'service_detail' i.pk %}">{{ i.title }}</a>
+										{% endfor %}
 									</li>
 								</ul>
 							</li>
 							<li class="has-mega-menu"> <a href="{% url 'shop' %}">{% trans 'Магазин' %}</a></li>
 							<li class="has-mega-menu">
-								<a href="javascript:;">Каталог<i class="fas fa-chevron-down"></i></a>
+								<a href="{% url 'shop' %}">Каталог<i class="fas fa-chevron-down"></i></a>
 								<ul class="mega-menu">
+									{% for category in categories %}
 									<li>
-										<a href="javascript:;">Pages</a>
+										<a href="{% url 'shop' %}?category={{ category.pk }}">{{ category.title }}</a>
 										<ul>
-											<li><a href="about-1.html">About us 1</a></li>
-											<li><a href="about-2.html">About us 2</a></li>
-											<li><a href="services-1.html">Services 1</a></li>
-											<li><a href="services-2.html">Services 2</a></li>
-											<li><a href="services-details.html">Services Details</a></li>
+											{% for product in category.products.all|slice:"5" %}
+											<li><a href="{% url 'product_detail' product.pk %}">{{ product.title }}</a></li>
+											{% endfor %}
 										</ul>
 									</li>
-									<li>
-										<a href="javascript:;">Pages</a>
-										<ul>
-
-											<li><a href="team-2.html">Team 2</a></li>
-											<li><a href="faq-1.html">Faqs 1</a></li>
-											<li><a href="faq-2.html">Faqs 2</a></li>
-											<li><a href="portfolio-grid-2.html">portfolio Grid 2</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="javascript:;">Pages</a>
-										<ul>
-											<li><a href="portfolio-grid-3.html">Portfolio Grid 3</a></li>
-											<li><a href="portfolio-grid-4.html">Portfolio Grid 4</a></li>
-											<li><a href="portfolio-details.html">Portfolio Details</a></li>
-											<li><a href="error-403.html">Error 403</a></li>
-											<li><a href="error-404.html">Error 404</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="javascript:;">Pages</a>
-										<ul>
-											<li><a href="error-405.html">Error 405</a></li>
-											<li><a href="coming-soon-1.html">Coming Soon 1</a></li>
-											<li><a href="coming-soon-2.html">Coming Soon 2</a></li>
-											<li><a href="help-desk.html">Help Desk</a></li>
-											<li><a href="privacy-policy.html">Privacy Policy</a></li>
-										</ul>
-									</li>
+									{% endfor %}
 								</ul>
 							</li>
 							<li class="has-mega-menu"> <a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
 
 							<li class="has-mega-menu"> <a href="{% url 'projects' %}">{% trans 'Проекты' %}<i class="fas fa-chevron-down"></i></a>
 								<ul class="mega-menu">
-									<li><a href="{% url 'projects' %}">{% trans 'Проекты' %}</a>
+									<li>
 										<ul>
 											{% for i in projects %}
 											<li><a href="{% url 'project_detail' i.pk %}"><i class="ti-mouse"></i> {{ i.title }}</a></li>
@@ -220,7 +186,7 @@
 								<li><a class="site-button-link linkedin fab fa-linkedin-in" href="javascript:void(0);"></a></li>
 								<li><a class="site-button-link instagram fab fa-instagram" href="javascript:void(0);"></a></li>
 							</ul>
-							<p>2024 Industry</p>
+							<p>2025 Super-q</p>
 						</div>
                     </div>
                 </div>
@@ -230,7 +196,7 @@
     </header>
     <!-- header END -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<a href="https://api.whatsapp.com/send?phone=+996775160402&text=Здравствуйте, я пишу вам из сайта ktz.kg." class="float" target="_blank">
+	<a href="https://api.whatsapp.com/send?phone=+996557663357&text=Здравствуйте, я пишу вам из сайта super-q.kg." class="float" target="_blank">
 	<i class="fa fa-whatsapp my-float"></i>
 	</a>
 	{% block content %}
@@ -247,7 +213,7 @@
 					<div class="col-md-6 text-md-end text-center">
 						<div class="widget-link "> 
 							<ul>
-								<li><a href="index.html">Home</a></li> 
+								<li><a href="{% url 'home' %}">Home</a></li>
 								<li><a href="about-2.html">About us</a></li> 
 								<li><a href="help-desk.html">Help Desk</a></li> 
 								<li><a href="privacy-policy.html">Privacy Policy</a></li> 

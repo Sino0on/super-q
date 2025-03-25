@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% block title %}
-ОСОО КТЗ
+Super-q KG
 {% endblock %}
 {% block content %}
     <!-- Content -->
@@ -15,7 +15,7 @@
 					<!-- Breadcrumb row -->
 					<div class="breadcrumb-row">
 						<ul class="list-inline">
-							<li><a href="index.html">{% trans 'Домой' %}</a></li>
+							<li><a href="{% url 'home' %}">{% trans 'Домой' %}</a></li>
 							<li>{% trans 'Проекты' %}</li>
 							<li>{{ project.title }}</li>
 						</ul>
