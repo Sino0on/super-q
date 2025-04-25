@@ -38,7 +38,7 @@ class Advantage(models.Model):
 class Category(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     short_description = models.TextField(verbose_name='Мини описание')
-    image = models.ImageField(upload_to='categories/', verbose_name='Изображение')
+    image = models.FileField(upload_to='categories/', verbose_name='Изображение')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
