@@ -147,7 +147,7 @@
 							<li class="has-mega-menu">
 								<a href="{% url 'shop' %}">Каталог<i class="fas fa-chevron-down"></i></a>
 								<ul class="mega-menu">
-									{% for category in categories %}
+									{% for category in categories_header %}
 									<li>
 										<a href="{% url 'shop' %}?category={{ category.pk }}">{{ category.title }}</a>
 										<ul>

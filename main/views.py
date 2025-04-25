@@ -14,6 +14,7 @@ class HomePage(generic.TemplateView):
         context['banners'] = Banner.objects.all()
         context['services'] = Service.objects.all()
         context['categories'] = Category.objects.all()
+        context['categories_header'] = Category.objects.all()[:4]
         context['employers'] = Employee.objects.all()
         context['advantages'] = Advantage.objects.all()
         context['testimonials'] = Testimonial.objects.all()
