@@ -134,7 +134,7 @@
                         <ul class="nav navbar-nav">
 							<li class="active has-mega-menu"> <a href="/">{% trans 'Домой' %}</a>
 							<li>
-								<a href="{% url 'services' %}">{% trans 'Сервисы' %}<i class="fas fa-chevron-down"></i></a>
+								<a href="{% url 'services' %}">{% trans 'Обслуживание' %}<i class="fas fa-chevron-down"></i></a>
 								<ul class="sub-menu tab-content">
 									<li>
 										{% for i in services %}
@@ -159,7 +159,7 @@
 									{% endfor %}
 								</ul>
 							</li>
-							<li class="has-mega-menu"> <a href="{% url 'news' %}">{% trans 'Новости' %}</a></li>
+							<li class="has-mega-menu"> <a href="{% url 'news' %}">{% trans 'Полезное' %}</a></li>
 
 							<li class="has-mega-menu"> <a href="{% url 'projects' %}">{% trans 'Проекты' %}<i class="fas fa-chevron-down"></i></a>
 								<ul class="mega-menu">
@@ -215,7 +215,7 @@
 							<ul>
 								<li><a href="{% url 'home' %}">Главная страница</a></li>
 								<li><a href="{% url 'about' %}">О нас</a></li>
-								<li><a href="{% url 'services' %}">Сервисы</a></li>
+								<li><a href="{% url 'services' %}">Обслуживание</a></li>
 								<li><a href="{% url 'home' %}">Сертификаты</a></li>
 								<li><a href="{% url 'contact' %}">Связаться</a></li>
 							</ul>
