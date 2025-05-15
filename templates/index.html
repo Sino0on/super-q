@@ -485,7 +485,7 @@ Super-q KG
                                         </ul>
                                     </div>
                                     <div class="dlab-post-title">
-                                        <h4 class="post-title"><a href="blog-single.html">{{ i.title }}</a></h4>
+                                        <h4 class="post-title"><a href="{% url 'news_detail' i.pk %}">{{ i.title }}</a></h4>
                                     </div>
 									<div class="dlab-post-text">
                                        <p>{{ i.short_description }}</p>
