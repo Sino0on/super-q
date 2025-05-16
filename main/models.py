@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.urls import reverse
 
 
 class Service(models.Model):
@@ -186,6 +187,9 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+    def get_absolute_url(self):
+        return reverse('product_detail', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'Продукт'
